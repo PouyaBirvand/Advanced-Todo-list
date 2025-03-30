@@ -2,13 +2,90 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive font sizes */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Animation for gradient text */
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 15s ease infinite;
+}
+
+/* Ensure proper scrolling on mobile */
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Improve tap targets on mobile */
+button, 
+input[type="checkbox"],
+select {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (max-width: 640px) {
+  button, 
+  input[type="checkbox"],
+  select {
+    min-height: 36px;
+    min-width: 36px;
+  }
+}
+
+/* Improve focus states for accessibility */
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid rgba(139, 92, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Prevent text from overflowing containers */
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better touch experience on mobile */
+@media (max-width: 640px) {
+  input, button, select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
 }
